@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ReviewDetails">
+
+            <TextView
+                android:id="@+id/tv_label_author"
+                style="@style/label"
+                android:text="@string/author"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_author"
+                style="@style/textViewDetails"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@+id/view4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label_author"
+                tools:text="Daniel T" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/white"
+                app:layout_constraintBottom_toTopOf="@+id/tv_label_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_author" />
+
+            <TextView
+                android:id="@+id/tv_label_content"
+                style="@style/label"
+                android:text="@string/description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_author" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                style="@style/textViewDetails"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/view5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label_content"
+                tools:text="Well this is how it will work for me" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/white"
+                app:layout_constraintBottom_toTopOf="@+id/tv_label_url"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_content" />
+
+            <TextView
+                android:id="@+id/tv_label_url"
+                style="@style/label"
+                android:text="@string/link_to_review"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_content" />
+
+            <TextView
+                android:id="@+id/tv_url"
+                style="@style/textViewDetails"
+                android:textAlignment="center"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_label_url"
+                tools:text="https//hello.com" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
