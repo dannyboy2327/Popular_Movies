@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean isPopular = true;
     private boolean isTopRated = false;
+
+    private Parcelable viewState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -182,7 +185,18 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(List<MoviesResults> moviesResultsList) {
                 Log.v(LOG_TAG, "Was Queried");
                 if (moviesResultsList != null) {
-                    mPosterAdapter.setFavorites(moviesResultsList);
+                    PosterAdapter posterAdapter = new PosterAdapter(moviesResultsList, new PosterAdapter.PosterClickListener() {
+                        @Override
+                        public void onPosterClick(MoviesResults moviesResults) {
+                            Intent detailsIntent = new Intent(MainActivity.this, DetailsActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable("movieResults", moviesResults);
+                            detailsIntent.putExtras(bundle);
+                            startActivity(detailsIntent);
+                        }
+                    });
+                    mBinding.rvLayout.setAdapter(posterAdapter);
+                    mBinding.pbProgress.setVisibility(View.INVISIBLE);
                     Log.v(LOG_TAG, "Ran2");
 
                 }

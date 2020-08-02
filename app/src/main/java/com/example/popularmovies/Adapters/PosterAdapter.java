@@ -54,11 +54,6 @@ public class PosterAdapter extends RecyclerView.Adapter<PosterAdapter.ImageViewH
         return mMoviesResultsList.size();
     }
 
-    public void setFavorites(List<MoviesResults> moviesResults){
-        mMoviesResultsList = moviesResults;
-        notifyDataSetChanged();
-    }
-
     public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private ImageView mImageView;

@@ -4,15 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark"
-        tools:context=".DetailsActivity">
-
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
+            tools:context=".DetailsActivity"
+            android:id="@+id/sv_DetailsScrollView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -203,7 +200,5 @@
                     app:layout_constraintTop_toTopOf="@+id/ib_favoriteButton" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
-
-    </FrameLayout>
+        </androidx.core.widget.NestedScrollView>
 </layout>
