@@ -11,7 +11,7 @@ Android Architecture Components are a common task for Android Developers.
 ## What I Learned?
 Through this project:
 - Learned how apply Android Architecture Components (View-Models, Live-Data, and Room)  
-- Practiced JSON parsing to a model object (Using library named Retrofit2)
+- Practiced JSON parsing to a model object (Using a library named Retrofit2)
 - Designed an activity layout (With the help of Picasso Library)
 - Populated all fields in the layout accordingly 
 
